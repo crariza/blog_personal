@@ -1,0 +1,396 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    background-color: #1415197b;
+    width: 12px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color:#23252B;
+    border-radius: 8px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: #23252B;
+    padding: 12px 0px 12px 40px;
+}
+
+.navbar_left, .navbar_right{
+    height: 80px;
+}
+
+.navbar_left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar_left figure {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar_left figure figcaption {
+    color: white;
+    font-weight: 600;
+}
+
+.navbar_left figure figcaption:hover {
+    cursor: pointer;
+    color: #FF6B00;
+}
+
+.navbar_left nav{
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+
+.navbar_left nav a{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar_left nav a:hover {
+    cursor: pointer;
+    background-color: #141519;
+}
+
+.navbar_right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.icons, #search, #bookmark {
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+
+#search, #bookmark {
+    padding: 0 12px;
+    width: 50px;
+}
+
+#search:hover, #bookmark:hover {
+    cursor: pointer;
+    background-color: #141519;
+}
+
+.navbar_right figure {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 20px;
+    height: inherit;
+}
+
+.navbar_right figure:hover {
+    cursor: pointer;
+    background-color: #141519;
+}
+
+.navbar_right figure img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    width: 100%;
+    min-height: 500px;
+    background-image: url(./images/background_image.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    height: 300px;
+    padding: 20px 12px;
+    background-color: #23252b89;
+    color: white;
+    font-weight: 100;
+    line-height: 30px;
+    text-align: justify;
+    overflow-y: scroll;
+}
+
+.description p{
+    max-width: 520px;
+}
+
+.description::-webkit-scrollbar {
+    width: 10px;
+    background-color: #23252b2a;
+}
+
+.description::-webkit-scrollbar-thumb {
+    background-color: #1415197b;
+    border-radius: 4px;
+}
+
+.recomendations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./images/black_background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.recomendations h2 {
+    align-self: flex-start;
+    display: inline-block;
+    margin: 62px 0 0 62px;
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+}
+
+.cards_slider{
+    display: flex;
+    gap: 14pc;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    overflow-y: hidden;
+    width: 90%;
+    height: 400px;
+    margin: 10px auto 50px auto;
+    padding: 40px;
+    border-top: 4px solid rgb(253, 127, 44);
+}
+
+.cards_slider::-webkit-scrollbar {
+    opacity: 0;
+}
+
+.cards_slider .card_container{
+    scroll-snap-align: center;
+}
+
+
+.card_container {
+    position: relative;
+    width: 180px;
+    height: 320px;
+}
+
+.card {
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 180px;
+    height: 100%;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card img{
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.anime_title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    height: 20px;
+}
+
+.anime_title p:nth-child(1) {
+    color: white;
+    font-size: 20px;
+}
+
+.anime_title p:nth-child(2) {
+    color: gray
+}
+
+.second_card {
+    width: 180px;
+    height: 100%;
+    padding: 12px;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #141519ac;
+    color: #DADADA;
+}
+
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rating p:nth-child(2), .rating p:nth-child(3) {
+    color:grey;
+}
+
+.icons {
+    position: relative;
+    display: flex;
+    gap: 8px;
+}
+
+.icons i {
+    font-size: 25px;
+    color: #FF6B00;
+}
+
+.icons i:hover {
+    color: white;
+}
+
+.icons a p{
+    display: none;
+    top: 75%;
+    position: absolute;
+    text-align: center;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100px;
+    background-color: #141519ca;
+}
+
+.icons a:hover p{
+    display: block;
+}
+
+.card_container:hover {
+    cursor: pointer;
+}
+
+.card_container:hover .anime_title {
+    display: none;
+}
+
+.card_container:hover .card img {
+    height: 100%;
+}
+
+.card_container:hover .second_card {
+    display: flex;
+}
+
+.advertising {
+    position: relative;
+    width: 800px;
+    height: 500px;
+}
+
+.advertising img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.advertising button {
+    position: absolute;
+    left: 43%;
+    bottom: 10%;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight:bold;
+    background-color: #FF6B00;
+    padding: 10px;
+}
+
+.advertising button:hover {
+    cursor: pointer;
+}
+
+footer {
+    padding: 8px;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(54,56,65,1) 71%, rgba(49,93,102,1) 100%);
+}
+
+footer h2{
+    margin-top: 40px;
+    text-align: center;
+    font-size: 28px;
+    color: white;
+}
+
+.social_media {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.instagram, .linkedin, .github {
+    text-align: center;
+    padding: 12px;
+}
+
+.social_media i {
+    color: gray;
+   font-size: 60px;
+}
+
+.social_media p{
+    color: rgb(189, 189, 189);
+}
+
+.instagram:hover i, .instagram:hover p{
+    color: white;
+}
+
+.linkedin:hover i, .linkedin:hover p{
+    color: white;
+}
+
+.github:hover i, .github:hover p{
+    color: white;
+}
