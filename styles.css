@@ -376,7 +376,15 @@ footer h2{
 
 .social_media i {
     color: gray;
-   font-size: 60px;
+   font-size: 45px;
+}
+
+.medias a i {
+    transition: all 0.5s ease;
+}
+
+.medias:hover i {
+    font-size: 60px;
 }
 
 .social_media p{
